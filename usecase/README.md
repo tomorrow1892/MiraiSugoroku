@@ -2,7 +2,7 @@
 
 ## 1. ユースケース図
 
-<img src="./img/usecase_figure.png">
+<img src="./img/UsecaseDiagram.png">
 
 ## ユースケース修正
 
