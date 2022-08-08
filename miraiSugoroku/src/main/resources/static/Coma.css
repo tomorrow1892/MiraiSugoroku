@@ -11,3 +11,9 @@
 		transform:translateX(200px);
 	}
 }
+
+@keyframes moveLeft {
+	to {
+		transform:translateX(-200px);
+	}
+}

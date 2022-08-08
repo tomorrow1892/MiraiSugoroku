@@ -30,7 +30,13 @@ class Player {
             objComa.style.left = x + 'px';		// 消した transform の影響を加味した位置を設定
             objComa.style.top = y + 'px';
             objComa.style.animationName = '';	// animationName を消す。こうしないと、次回に同じ方向のアニメが効かない。
+
+            if(this.moveCount > 0){//進む場合
             this.setMoveCount(this.moveCount - 1);
+            }
+            if(this.moveCount < 0){//戻る場合
+                this.setMoveCount(this.moveCount+1);
+            }
              console.log(this.comaId + "のmoveCount:" + this.moveCount);
             console.log("現在位置:"+ this.position);
             if (this.moveCount == 0) {
@@ -92,16 +98,21 @@ class Player {
 
 
     move() {
-        
         const objComa = document.getElementById(this.comaId);
         const cssStyle = window.getComputedStyle(objComa);
         x = parseInt(cssStyle.left.match(/(.*)px/)[1]);	// コマの現在位置を得る
         y = parseInt(cssStyle.top.match(/(.*)px/)[1]);
-        let anim = 'moveRight';
-        this.position += 1;
+        let anim;
+        if(this.moveCount > 0){//進む場合
+            anim = 'moveRight';
+            this.position += 1;
+        }
+        if(this.moveCount < 0){
+            anim = 'moveLeft';
+            this.position -= 1;
+        }
+        
         objComa.style.animationName = anim;	// アニメ開始
-
-
     }
     setMoveCount(count) {
         this.moveCount = count;
