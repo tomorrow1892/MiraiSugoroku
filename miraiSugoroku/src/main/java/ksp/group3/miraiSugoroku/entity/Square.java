@@ -19,6 +19,8 @@ public class Square {
     Long squareId;
     String title;
     Long squareEventId;
+    Long eventId;
+    Long groupId;
     String description;
     Long creatorId;
     boolean isApproved;

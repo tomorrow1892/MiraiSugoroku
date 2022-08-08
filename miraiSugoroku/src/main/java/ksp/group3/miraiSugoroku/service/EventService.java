@@ -25,7 +25,8 @@ public class EventService {
 
     public Event getEvent(long eventId) {
         Event e = eRepo.findById(eventId)
-                .orElseThrow(() -> new MiraiSugorokuException(MiraiSugorokuException.ERROR, eventId + ": No such Event"));
+                .orElseThrow(() -> new MiraiSugorokuException(MiraiSugorokuException.ERROR,
+                        eventId + ": No such Event"));
 
         return e;
     }
@@ -54,7 +55,9 @@ public class EventService {
         try {
             start = sdf.parse(s_start);
             until = sdf.parse(s_until);
-        } catch (Exception e) {;}
+        } catch (Exception e) {
+            ;
+        }
 
         return eRepo.findByStartDateBetween(start, until);
     }
@@ -63,4 +66,3 @@ public class EventService {
         return eRepo.findByLimitDateAfter(day);
     }
 }
-

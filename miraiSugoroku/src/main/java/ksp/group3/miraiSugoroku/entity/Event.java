@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
@@ -15,8 +16,8 @@ import java.util.Date;
 @Data
 public class Event {
     @Id
-    @GeneratedValue
-    long eventID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long eventID;
 
     int nGroups;
 
@@ -25,4 +26,6 @@ public class Event {
     Date limitDate;
 
     String name;
+
+    boolean isApproved;
 }

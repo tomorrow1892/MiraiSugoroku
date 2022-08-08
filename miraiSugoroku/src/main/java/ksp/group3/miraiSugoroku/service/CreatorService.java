@@ -3,6 +3,8 @@ package ksp.group3.miraiSugoroku.service;
 import ksp.group3.miraiSugoroku.entity.SquareCreator;
 import ksp.group3.miraiSugoroku.form.SquareCreatorForm;
 import ksp.group3.miraiSugoroku.repository.CreatorRepository;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
+@RequiredArgsConstructor
 public class CreatorService {
     @Autowired
     CreatorRepository cRepo;
@@ -25,13 +28,13 @@ public class CreatorService {
     public SquareCreator updateSquareCreator(long creatorId, SquareCreatorForm form) {
         SquareCreator sc = cRepo.findById(creatorId).get();
 
-        if(Objects.nonNull(form.getName())) {
+        if (Objects.nonNull(form.getName())) {
             sc.setName(form.getName());
         }
-        if(Objects.nonNull(form.getNickname())) {
+        if (Objects.nonNull(form.getNickname())) {
             sc.setNickname(form.getNickname());
         }
-        if(form.getGroup() != 0) {
+        if (form.getGroup() != 0) {
             sc.setGroup(form.getGroup());
         }
 

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -14,12 +15,12 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class SquareCreator {
     @Id
-    @GeneratedValue
-    long creatorID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long creatorID;
 
     String loginID;
 
-    long eventID;
+    Long eventID;
 
     int group;
 
