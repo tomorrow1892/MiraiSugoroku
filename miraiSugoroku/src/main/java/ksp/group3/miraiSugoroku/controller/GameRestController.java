@@ -22,7 +22,7 @@ public class GameRestController {
 
     @GetMapping("/api/doEvent")
     String doEvent() throws JsonProcessingException{
-        return objectMapper.writeValueAsString( new Player(1, "さんだ", 200, 8, false));
+        return objectMapper.writeValueAsString( new Player(1, "さんだ", 200, 1, false));
     }
     
 }
