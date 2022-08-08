@@ -17,3 +17,9 @@ function popupImage() {
     }
   }
   popupImage();
+
+  function switchPopup (){
+    var popup = document.getElementById('js-popup');
+    if(!popup) return;
+    popup.classList.toggle('is-show');
+  }
