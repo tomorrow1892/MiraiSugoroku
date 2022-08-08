@@ -14,28 +14,28 @@ public class CreatorController {
     // SquareService sService;
 
     @GetMapping("/loginpage")
-    public String showcreatorLoginPage() {
+    public String showCreaterLoginPage() {
         return "creator_login";
     }
 
     @GetMapping("/login")
-    public String creatorLogin(Long eventId, String loginId) {
+    public String createrLogin(Long eventId, String loginId) {
         String cid = "test";
         return "redirect:/" + cid + "/manu";
     }
 
     @GetMapping("/{cid}/manu")
-    public String showcreatorMenu() {
+    public String showCreaterMenu() {
         return "creator_menu";
     }
 
     @GetMapping("/{cid}/detail")
-    public String showcreatorDetailForm() {
+    public String showCreaterDetailForm() {
         return "creator_profile";
     }
 
     @PostMapping("/{cid}/update")
-    public String updatecreatorDetail() {// (SquarecreatorForm form) {
+    public String updateCreaterDetail() {// (SquareCreaterForm form) {
         String cid = "test";
         return "redirect:/" + cid + "/menu";
     }

@@ -16,7 +16,16 @@ public class EventForm {
         Event e = new Event();
 
         Date startDate = new Date();
-        Date d_limitDate = getLimitDate();
+
+        SimpleDateFormat limitFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date d_limitDate = null;
+
+        //TODO 例外処理をする
+        try {
+             d_limitDate = limitFormat.parse(limitDate);
+        } catch (Exception exception) {
+            ;
+        }
 
         e.setName(name);
         e.setStartDate(startDate);
@@ -24,19 +33,5 @@ public class EventForm {
         e.setNGroups(nGroups);
 
         return e;
-    }
-
-    public Date getLimitDate() {
-        SimpleDateFormat limitFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date d_limitDate = null;
-
-        //TODO 例外処理をする
-        try {
-            d_limitDate = limitFormat.parse(limitDate);
-        } catch (Exception exception) {
-            ;
-        }
-
-        return d_limitDate;
     }
 }

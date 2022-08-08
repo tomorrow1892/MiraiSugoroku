@@ -7,17 +7,18 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SquareCreator {
+public class SquareCreater {
     @Id
     @GeneratedValue
     long createID;
 
-    String loginID;
+    int loginID;
 
     long eventID;
 
