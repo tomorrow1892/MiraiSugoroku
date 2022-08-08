@@ -144,5 +144,6 @@ function playGame() {
     
     //alert(player1.name + "のターン!");
     btnDisabled("diceBtn1", false);
+    document.getElementById("playGame").style.visibility = 'hidden'
 }
 

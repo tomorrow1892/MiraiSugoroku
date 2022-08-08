@@ -30,11 +30,12 @@
     <div id="point3" style="position: absolute;left:500px;top:60px;"></div>
     <div id="point4" style="position: absolute;left:500px;top:80px;"></div>
 
-    <button type="button" onclick="playGame()" style="width: 200px;height: 200px; position: relative; border-radius: 50%;
+    <button type="button" id="playGame" onclick="playGame()" style="width: 200px;height: 200px; position: relative; border-radius: 50%;
     left:500px;top:-200px; background-color: rgba(165, 42, 42, 0.349);">ゲーム開始!!!</button>
-    <section>
+    <section class="masu">
         <img th:src="@{/img/sikaku.png}" id="masu1">
         <img th:src="@{/img/sikaku.png}" id="masu2">
+        <p>有馬富士公園で遊ぶ 1回休み</p>
         <img th:src="@{/img/sikaku.png}" id="masu3">
         <img th:src="@{/img/sikaku.png}" id="masu4">
         <img th:src="@{/img/sikaku.png}" id="masu5">
