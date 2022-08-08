@@ -3,7 +3,6 @@ package ksp.group3.miraiSugoroku.service;
 import ksp.group3.miraiSugoroku.entity.Event;
 import ksp.group3.miraiSugoroku.exception.MiraiSugorokuException;
 import ksp.group3.miraiSugoroku.form.EventForm;
-import ksp.group3.miraiSugoroku.repository.creatorRepository;
 import ksp.group3.miraiSugoroku.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +16,6 @@ import java.util.List;
 public class EventService {
     @Autowired
     EventRepository eRepo;
-
-    @Autowired
-    creatorRepository cRepo;
 
     public Event createEvent(EventForm eventForm) {
         Event e = eventForm.toEntity();
@@ -67,3 +63,4 @@ public class EventService {
         return eRepo.findByLimitDateAfter(day);
     }
 }
+
