@@ -10,4 +10,8 @@ public class UserController {
     public String showIndexPage(){
         return "index";
     }
+    @GetMapping("/game")
+    public String showGamePage(){
+        return "SugorokuGame";
+    }
 }
