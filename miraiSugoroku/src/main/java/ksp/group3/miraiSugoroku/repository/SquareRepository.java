@@ -17,7 +17,7 @@ public interface SquareRepository extends CrudRepository<Square, Long> {
 
     public List<Square> findByCreatorId(Long creatorId);
 
-    public List<Square> findByEventIdAndGroupId(Long eventId, Long groupId);
+    public List<Square> findByEventIdAndGroupId(Long eventId, int groupId);
 
     public List<Square> findByEventIdAndIsApproved(Long eventId, boolean isApproved);
 }

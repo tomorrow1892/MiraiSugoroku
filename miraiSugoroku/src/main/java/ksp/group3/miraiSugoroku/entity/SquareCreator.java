@@ -15,7 +15,7 @@ import javax.persistence.Id;
 public class SquareCreator {
     @Id
     @GeneratedValue
-    long createID;
+    long creatorID;
 
     String loginID;
 

@@ -11,4 +11,6 @@ public interface CreatorRepository extends CrudRepository<SquareCreator, Long> {
     List<SquareCreator> findByEventID(long id);
     List<SquareCreator> findByEventAndGroup(long eventID, int group);
     List<SquareCreator> findByNickname(String nickname);
+
+    List<SquareCreator> findByNicknameContaining(String keyword);
 }

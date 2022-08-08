@@ -2,7 +2,6 @@ package ksp.group3.miraiSugoroku.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +28,7 @@ public class SquareService {
     }
 
     public Square getSquare(Long squareId){
-        return sRepo.get(squareId);
+        return sRepo.findById(squareId).get();
     }
 
     public Square updateSquare(Long squareId, SquareForm form){
@@ -43,8 +42,8 @@ public class SquareService {
         return sRepo.save(square);
     }
 
-    public Square deleteSquare(Long squareId){
-        return sRepo.deleteById(squareId);
+    public void deleteSquare(Long squareId){
+        sRepo.deleteById(squareId);
     }
 
     public List<Square> filterSquaresByIsApproved(boolean isApproved){
@@ -82,7 +81,7 @@ public class SquareService {
         ArrayList<Square> list = new ArrayList<>();
 
         for(SquareCreator creator:list_creator){
-            Long creatorId = creator.getCreatorId;
+            Long creatorId = creator.getCreatorID();
 
             List<Square> list_tmp = sRepo.findByCreatorId(creatorId);
             list.addAll(list_tmp);
@@ -92,9 +91,9 @@ public class SquareService {
     }
 
     public List<Square> searchSquaresByMyBroup(Long creatorId){
-        SquareCreator creator = cRepo.findByCreatorId(creatorId);
+        SquareCreator creator = cRepo.findById(creatorId).get();
 
-        return sRepo.findByEventIdAndGroupId(creator.getEventId(), creator.getGroupId())
+        return sRepo.findByEventIdAndGroupId(creator.getEventID(), creator.getGroup());
     }
 
     public List<Square> searchMySquares(Long creatorId){
