@@ -17,12 +17,12 @@ public class GameRestController {
     String diceRoll(@RequestParam String suzi) throws JsonProcessingException{
     
         System.out.println(suzi);
-        return objectMapper.writeValueAsString(new Player(1, "さんだ", 100, 1+Integer.parseInt(suzi) , false))  ;
+        return objectMapper.writeValueAsString(new Player( null, null, "aaa!", "さんだろう", 1, 0, 1+Integer.parseInt(suzi), false, false));
     }
 
     @GetMapping("/api/doEvent")
     String doEvent() throws JsonProcessingException{
-        return objectMapper.writeValueAsString( new Player(1, "さんだ", 200, 1, false));
+        return objectMapper.writeValueAsString( new Player( null, null, "aaa!", "さんだろう", 1, 200, 1, false, false));
     }
     
 }
