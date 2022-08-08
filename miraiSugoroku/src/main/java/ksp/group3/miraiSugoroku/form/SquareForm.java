@@ -1,4 +1,4 @@
-package ksp.form;
+package ksp.group3.miraiSugoroku.form;
 
 
 import ksp.group3.miraiSugoroku.entity.Square;

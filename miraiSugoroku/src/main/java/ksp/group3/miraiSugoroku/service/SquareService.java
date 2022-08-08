@@ -7,9 +7,9 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ksp.form.SquareForm;
 import ksp.group3.miraiSugoroku.entity.Square;
 import ksp.group3.miraiSugoroku.entity.SquareCreator;
+import ksp.group3.miraiSugoroku.form.SquareForm;
 import ksp.group3.miraiSugoroku.repository.CreatorRepository;
 import ksp.group3.miraiSugoroku.repository.EventRepository;
 import ksp.group3.miraiSugoroku.repository.SquareRepository;
