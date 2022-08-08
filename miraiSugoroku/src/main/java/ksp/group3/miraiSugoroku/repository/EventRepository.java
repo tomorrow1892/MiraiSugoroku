@@ -11,4 +11,6 @@ import java.util.List;
 public interface EventRepository extends CrudRepository<Event, Long> {
     List<Event> findByIsApproved(boolean isApproved);
     List<Event> findByLimitDateAfter(Date date);
+
+    List<Event> findByStartDateBetween(Date since, Date until);
  }
