@@ -1,0 +1,13 @@
+.coma{
+    position: absolute;
+    animation-duration: 0.5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes moveRight {
+	to {
+		transform:translateX(200px);
+	}
+}
